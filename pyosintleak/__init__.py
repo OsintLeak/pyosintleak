@@ -1,6 +1,6 @@
 import requests
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 class osintleak:
     BASE_URL = "https://osintleak.com/api/v1"

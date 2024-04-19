@@ -29,7 +29,7 @@ def handel_response(response):
             print(f"{Fore.YELLOW}[i] Use '{Fore.WHITE}osintleak -r {response['result_id']} --ps {options.page_size} -p {response['page']+1}{Fore.YELLOW}' to fetch the next page{Style.RESET_ALL}")
 
     elif response["status"] == "error":
-        print(f"{Fore.RED}{response["message"]}{Style.RESET_ALL}")
+        print(f"{Fore.RED}{response['message']}{Style.RESET_ALL}")
 
 def print_record(record):
     if 'leak_id' in record:
