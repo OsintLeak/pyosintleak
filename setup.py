@@ -8,7 +8,7 @@ this_directory = path.abspath(path.dirname(__file__))
 with io.open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     desc = f.read()
 
-ol_version = '1.0.1'
+ol_version = '1.0.2'
 
 setup(
     name='pyosintleak',

@@ -1,6 +1,6 @@
 import requests
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 class osintleak:
     BASE_URL = "https://osintleak.com/api/v1"
@@ -16,7 +16,7 @@ class osintleak:
             "User-Agent": self.USER_AGENT
         }
 
-    def search(self, query, type, datasets=DATASETS, similar_search=False, from_date=None, to_date=None, page=1, page_size=20, meta='true'):
+    def search(self, query, type, datasets=DATASETS, similar_search=False, from_date=None, to_date=None, page=1, page_size=20, country=None, sort=None, meta='true'):
         if type not in self.AVAILABLE_SEARCH_TYPES:
             return {"status": "error", "message": f"Invalid search type. Available types are: {', '.join(self.AVAILABLE_SEARCH_TYPES)}"}
         
@@ -49,8 +49,10 @@ class osintleak:
                 "similar_search": similar_search,
                 "from_date": from_date,
                 "to_date": to_date,
+                "country": country,
                 "page": page,
                 "page_size": page_size,
+                "sort": sort,
                 "meta": meta
             }
             rep = requests.get(f"{self.BASE_URL}/search_api/", headers=self.HEADERS, params=PARAMS)
